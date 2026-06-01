@@ -4,20 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>부경대학교의 미래</title>
+<title>최연우 | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
-    --bg:#e8e0f7;
-    --card:rgba(255,255,255,.65);
-    --text:#2d1b4e;
-    --accent:#7c4dff;
-    --line:#b39ddb;
-}
-
 *{
     margin:0;
     padding:0;
@@ -25,216 +16,287 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ede7f6,#d1c4e9);
-    font-family:'Noto Sans KR',sans-serif;
-    color:var(--text);
-}
-
-body::before{
-    content:"✦ ♡ ✧ ☆ ✿ ☾";
-    position:fixed;
-    inset:0;
-    font-size:180px;
-    color:rgba(124,77,255,.05);
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    flex-wrap:wrap;
-    pointer-events:none;
-    z-index:-1;
-}
-
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.title{
-    font-family:'Nanum Brush Script',cursive;
-    font-size:9rem;
-    color:var(--accent);
-}
-
-.subtitle{
-    margin-top:20px;
-    font-size:1.2rem;
-    color:#5e548e;
-}
-
-.scroll{
-    margin-top:60px;
-    color:#7e57c2;
+    font-family:'Pretendard',sans-serif;
+    background:#fafafa;
+    color:#222;
+    line-height:1.7;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
+    width:min(1100px,90%);
     margin:auto;
-    padding-bottom:100px;
+}
+
+header{
+    padding:28px 0;
+    border-bottom:1px solid #ececec;
+    background:white;
+    position:sticky;
+    top:0;
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    gap:24px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#444;
+    transition:.2s;
+}
+
+.menu a:hover{
+    color:black;
+}
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    gap:60px;
+}
+
+.text h1{
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.text p{
+    color:#666;
+    max-width:600px;
+}
+
+.badges{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.badge{
+    background:white;
+    border:1px solid #e5e5e5;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:.9rem;
+}
+
+.profile{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    overflow:hidden;
+    border:1px solid #e5e5e5;
+    background:white;
+    flex-shrink:0;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:12px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#111;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid #ddd;
+    color:#333;
+    background:white;
 }
 
 .section{
-    margin:40px 0;
-    padding:35px;
-    background:var(--card);
-    border-radius:25px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 25px rgba(124,77,255,.1);
+    padding:100px 0;
 }
 
-.section-title{
-    font-family:'Nanum Brush Script',cursive;
-    font-size:3rem;
-    color:var(--accent);
-    margin-bottom:20px;
-}
-
-.weather-box{
-    text-align:center;
-    font-size:1.5rem;
-}
-
-.news-item{
-    padding:15px;
-    border-bottom:1px dashed var(--line);
-}
-
-.news-item:last-child{
-    border:none;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
+.section h2{
+    margin-bottom:25px;
+    font-size:2rem;
 }
 
 .card{
     background:white;
-    padding:20px;
+    padding:30px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(124,77,255,.1);
-}
-
-.card h3{
-    color:var(--accent);
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.stat{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-}
-
-.stat-number{
-    font-size:2.3rem;
-    color:var(--accent);
-    font-weight:bold;
-    margin-top:10px;
+    border:1px solid #eee;
+    margin-top:20px;
 }
 
 footer{
     text-align:center;
-    padding:40px;
-    color:#6a5acd;
+    padding:50px 0;
+    color:#777;
 }
 
 @media(max-width:768px){
-    .title{
-        font-size:4.5rem;
+
+    .hero-content{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .text h1{
+        font-size:2.2rem;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .badges{
+        justify-content:center;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-    <h1 class="title">부경대학교의 미래</h1>
-    <p class="subtitle">부산 · 대학 · 사회복지 · 미래 플랫폼</p>
-    <div class="scroll">▼ SCROLL</div>
-</div>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">최연우</div>
 
-<div class="container">
-
-    <div class="section">
-        <div class="section-title">날씨</div>
-        <div class="weather-box">☀️ 부산 24°C / 맑음</div>
+            <div class="menu">
+                <a href="#about">소개</a>
+                <a href="#projects">프로젝트</a>
+                <a href="#contact">연락처</a>
+            </div>
+        </nav>
     </div>
+</header>
 
-    <div class="section">
-        <div class="section-title">부산의 이슈</div>
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
 
-        <div class="news-item">가덕도 신공항 추진</div>
-        <div class="news-item">북항 재개발 확대</div>
-        <div class="news-item">해양 관광 산업 활성화</div>
-        <div class="news-item">청년 일자리 정책 강화</div>
-    </div>
+            <div class="text">
+                <h1>안녕하세요.<br>최연우입니다.</h1>
 
-    <div class="section">
-        <div class="section-title">부경대학교 뉴스</div>
+                <p>
+                    사회복지와 마케팅을 공부하며
+                    사람과 데이터를 이해하는 데 관심을 가지고 있습니다.
+                    문제를 분석하고 해결하는 과정을 즐기며,
+                    꾸준히 배우고 성장하는 것을 목표로 합니다.
+                </p>
 
-        <div class="grid">
-            <div class="card">
-                <h3>AI 교육 강화</h3>
-                <p>디지털 인재 양성 프로그램 확대</p>
+                <div class="badges">
+                    <span class="badge">사회복지</span>
+                    <span class="badge">마케팅</span>
+                    <span class="badge">데이터 분석</span>
+                    <span class="badge">Problem Solving</span>
+                </div>
+
+                <div class="buttons">
+                    <a href="https://github.com/YOUR_GITHUB_ID"
+                       class="btn btn-primary">
+                        GitHub
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline">
+                        Contact
+                    </a>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>산학협력</h3>
-                <p>지역 기업과 공동 연구 진행</p>
+            <!-- 만화 증명사진 -->
+            <div class="profile">
+                <img src="profile.png" alt="프로필">
             </div>
 
-            <div class="card">
-                <h3>국제 교류</h3>
-                <p>해외 대학 협력 확대</p>
-            </div>
         </div>
     </div>
+</section>
 
-    <div class="section">
-        <div class="section-title">사회복지 통계</div>
+<section class="section" id="about">
+    <div class="container">
+        <h2>About Me</h2>
 
-        <div class="stats">
-            <div class="stat">
-                <div>노인 인구</div>
-                <div class="stat-number">18%</div>
-            </div>
+        <div class="card">
+            <p>
+                사회복지학과 마케팅을 공부하고 있습니다.
+                사람의 행동과 의사결정 과정을 이해하는 것에 관심이 있으며,
+                데이터를 통해 문제를 발견하고 해결하는 경험을 쌓고 있습니다.
+            </p>
+        </div>
+    </div>
+</section>
 
-            <div class="stat">
-                <div>기초생활수급자</div>
-                <div class="stat-number">255만</div>
-            </div>
+<section class="section" id="projects">
+    <div class="container">
+        <h2>Projects</h2>
 
-            <div class="stat">
-                <div>장애인 등록</div>
-                <div class="stat-number">264만</div>
-            </div>
-
-            <div class="stat">
-                <div>복지 예산</div>
-                <div class="stat-number">34%</div>
-            </div>
+        <div class="card">
+            <h3>프로젝트 제목</h3>
+            <p>
+                프로젝트 설명을 작성하세요.
+            </p>
         </div>
 
+        <div class="card">
+            <h3>프로젝트 제목</h3>
+            <p>
+                프로젝트 설명을 작성하세요.
+            </p>
+        </div>
     </div>
+</section>
 
-</div>
+<section class="section" id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+
+        <div class="card">
+            <p>Email : your-email@example.com</p>
+            <p>GitHub : github.com/YOUR_GITHUB_ID</p>
+        </div>
+    </div>
+</section>
 
 <footer>
-    © 2025 부경대학교의 미래
+    © 2026 최연우. All Rights Reserved.
 </footer>
 
 </body>
